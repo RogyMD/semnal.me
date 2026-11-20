@@ -1,0 +1,40 @@
+---
+layout: default
+title: Semnal
+description: "Instant Signal for Help. One tap turns your iPhone into a siren, a flashing light and a message to the people you chose."
+---
+{%- comment -%}
+  Placeholder home page. It is replaced by the T114 page once the owner picks a mockup.
+{%- endcomment -%}
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <span class="mark" aria-hidden="true">
+        <svg class="ring" viewBox="0 0 100 100">
+          <defs><linearGradient id="coral" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff7a59"/><stop offset="1" stop-color="#e2502f"/></linearGradient></defs>
+          <circle cx="50" cy="50" r="38" fill="none" stroke="url(#coral)" stroke-width="22"/>
+        </svg>
+      </span>
+      <h1>Semnal</h1>
+      <p class="tag muted">Instant Signal for Help</p>
+      <p class="sum muted">One tap turns your iPhone into a siren, a flashing light and a message to the people you chose.</p>
+      <ul class="links">
+        <li><a href="{{ '/privacy' | relative_url }}">Privacy Policy</a></li>
+        <li><a href="{{ '/terms' | relative_url }}">Terms</a></li>
+        <li><a href="{{ '/feed.xml' | relative_url }}">RSS</a></li>
+      </ul>
+    </div>
+  </section>
+{%- if site.posts.size > 0 %}
+  <section class="news" id="news">
+    <div class="wrap">
+      <h2>News</h2>
+      <ul>
+      {%- for post in site.posts %}
+        <li><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%-d %b %Y" }}</time><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+      {%- endfor %}
+      </ul>
+    </div>
+  </section>
+{%- endif %}
+</main>
