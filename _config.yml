@@ -1,0 +1,42 @@
+title: Semnal
+description: Instant Signal for Help
+url: https://semnal.me
+baseurl: ""
+lang: en
+
+markdown: kramdown
+kramdown:
+  input: GFM
+
+plugins:
+  - jekyll-feed
+
+feed:
+  path: feed.xml
+
+# Posts are news: https://semnal.me/news/YYYY/MM/title
+permalink: /news/:year/:month/:title
+
+# Jekyll skips dot-folders unless listed here. Apple reads
+# https://semnal.me/.well-known/apple-app-site-association
+include:
+  - .well-known
+
+exclude:
+  - SETUP.md
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+
+defaults:
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: page
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post

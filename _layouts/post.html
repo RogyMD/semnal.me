@@ -1,0 +1,10 @@
+---
+layout: default
+---
+<main class="wrap prose">
+<article>
+  <p class="kicker"><a href="{{ '/' | relative_url }}#news">News</a> · <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%-d %B %Y" }}</time></p>
+  <h1>{{ page.title }}</h1>
+  {{ content }}
+</article>
+</main>
