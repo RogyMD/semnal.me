@@ -16,6 +16,7 @@ Semnal is made by AI Garden, which is me, one developer. This page explains what
 - Semnal has no sign-up. I never ask for your email address or a password, and your phone number never goes to my server. The app makes an anonymous account for you, which is a random ID.
 - If you choose people to alert, an alarm goes to them through a server I run on Google Firebase. It carries your display name, your message and, only if the signal has **Insert location** on, where you are. If the signal has **Attach video** or **Attach audio** on, it also carries your recordings. The server deletes alarms and recordings after 7 days.
 - An SMS goes from your own iPhone, through Messages, and never passes through my server.
+- **Remove All Data** in Settings deletes your account and everything about it on the server and on your iPhone at once. An account nobody uses for a year is deleted the same way.
 - Semnal has no ads, no analytics tools, no crash-reporting tools and no purchases, and I don't sell your data.
 
 ## What stays on your iPhone
@@ -46,6 +47,8 @@ When Semnal starts, it makes an anonymous account on my server: a random ID with
 
 Your **account key** is your login. You find it in **Settings → Push Notification → Account key**. The server keeps only a scrambled form of the key, never the key itself. Anyone who has your key can receive the alarms sent to you, so keep it like a password.
 
+**An account not used for a year is deleted,** with everything the server keeps for it, as with **Remove All Data** (see "Deleting your data"). The server checks once a day. Use means any of these: Semnal comes to the front on your iPhone, the app asks the server for something (for example pairing with someone, or your account key), you start an alarm, or an alert reaches your iPhone. Being in someone's list is not use. If you open Semnal after your account was deleted, it starts a new, empty one.
+
 ## Your QR code
 
 **Settings → My QR code** shows a code that another person scans to pair with you. It can carry:
@@ -60,9 +63,9 @@ Your iPhone puts your phone number into the code by itself. It goes only to the 
 
 The server runs on Google Firebase, in Google's London region. Recordings are kept in Firebase Storage, in the same Firebase project. It's used only for telling people about an alarm and passing them its recordings. Google stores the data for me under the [Firebase privacy terms](https://firebase.google.com/support/privacy).
 
-**What I keep until you ask me to delete it:**
+**What I keep until you delete it, or until your account has gone a year without use:**
 
-- Your anonymous account ID.
+- Your anonymous account ID, and when it was last in use.
 - Your display name, once you set one.
 - A push token for each of your iPhones, so notifications can reach it, and whether critical alerts are allowed on that iPhone. It's stored under an ID that Apple gives the app for your device.
 - The scrambled form of your account key.
@@ -111,7 +114,7 @@ Alerts reach people as push notifications. The notification's text passes throug
 
 Alerts are time-sensitive notifications: they come through a Focus, but don't sound on a silenced iPhone. Semnal can't use critical alerts yet. Once Apple allows them, an alert sounds on a silenced iPhone only where its owner has allowed critical alerts. A test is a plain, silent notification.
 
-Plain notifications with your display name also go out when you confirm you're safe (to the people your last alarm alerted), when you ask someone to alert you too, and when you switch off or stop getting someone's alerts (to that person).
+Plain notifications with your display name also go out when you confirm you're safe (to the people your last alarm alerted), when you ask someone to alert you too, when you switch off or stop getting someone's alerts (to that person), and when your account is deleted, by **Remove All Data** or after a year without use (to the people who alert you).
 
 ## What reaches me
 
@@ -123,12 +126,17 @@ I don't share any of this with anyone else, and I don't sell it.
 
 ## Deleting your data
 
+- **Remove All Data** in **Settings** deletes everything at once, after you confirm. It can't be undone, and it can't be used while a signal runs.
+  - **On the server:** your account, display name, push tokens, account key record, storage count, your alarms with their location, updates, delivery records and recordings, and every link, both the people you alert and the people who alert you. If the connection drops halfway, the server finishes the rest that night.
+  - **On your iPhone:** your signals, settings, History and recordings, the recordings fetched from other people's alarms, and your account key. Your signals and settings go back to how they were when you first opened the app, and that fresh start also replaces the copy in your iCloud, so your other devices on the same iCloud account are reset too.
+  - **Who is told:** the people who alert you get a notification that you left. The people you alert are not notified; you simply leave their list.
+  - **What stays:** videos you saved to Photos, and copies of your recordings that other people saved or shared. If you hid a recording in someone else's alarm, your display name stays on it until that alarm is deleted, at most 7 days after it started.
 - **Remove a person** in **Settings → Push Notification**. The link is deleted, and that person can no longer see your alarms or recordings, old ones included.
 - **Alarms** are deleted from the server 7 days after they start, with their location, updates, delivery records and recordings.
 - **Recordings** on the server can be deleted sooner in **Settings → Cloud storage**.
-- **Deleting the app** removes the signals, settings, history and recordings it stored on that iPhone. It doesn't remove videos in your Photos, the copy of your signals and settings in iCloud, or your record on my server. Recordings on the server still go after 7 days.
+- **Deleting the app** removes the signals, settings, history and recordings it stored on that iPhone. It doesn't remove videos in your Photos, the copy of your signals and settings in iCloud, or your record on my server. Use **Remove All Data** first if you want those gone too. Otherwise recordings on the server still go after 7 days, and the rest a year after your account was last in use.
 - **The iCloud copy:** on iPhone, open **Settings**, tap your name, then **iCloud**, open the storage list, choose the app and delete its data.
-- **Your record on my server:** email me at [semnal@aigarden.uk](mailto:semnal@aigarden.uk) and I'll delete your account, display name, push tokens, links, storage count and key record by hand. Your account is anonymous, so I can't find it from your email address. Send me your account key from **Settings → Push Notification → Account key**, and I'll use it to find your record. The key stops working once the account is deleted. If you have no key, send me your display name and the name of one person you alert.
+- **Your record on my server, if you can't use the app:** email me at [semnal@aigarden.uk](mailto:semnal@aigarden.uk) and I'll delete your account, display name, push tokens, links, storage count and key record by hand. Your account is anonymous, so I can't find it from your email address. Send me your account key from **Settings → Push Notification → Account key**, and I'll use it to find your record. The key stops working once the account is deleted. If you have no key, send me your display name and the name of one person you alert.
 - **Emails:** ask me and I'll delete our conversation.
 
 Wherever you live, you can ask me what I hold about you, or ask me to correct or delete it, at semnal@aigarden.uk.

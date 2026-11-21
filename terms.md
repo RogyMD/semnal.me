@@ -61,7 +61,7 @@ Don't use Semnal to frighten or harass anyone, to send false alarms, or to follo
 
 ## Your data
 
-The [Semnal Privacy Policy](/privacy) says what leaves your iPhone and how to delete it. The server keeps alarms and their recordings for 7 days, and each account has 500 MB for recordings.
+The [Semnal Privacy Policy](/privacy) says what leaves your iPhone and how to delete it. The server keeps alarms and their recordings for 7 days, and each account has 500 MB for recordings. **Remove All Data** in Settings deletes your account at once, and an account not used for a year is deleted with everything on the server; either way, the people you alert and who alert you are no longer linked to you.
 
 ## Price
 
