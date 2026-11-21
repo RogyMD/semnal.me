@@ -6,7 +6,7 @@ permalink: /terms
 
 # Semnal Terms
 
-**Last updated: 16 November 2026**
+**Last updated: 21 November 2026**
 
 Semnal is made by AI Garden, which is me, one developer. These are the terms for using it. They're short on purpose. Apple's [standard licence for App Store apps](https://www.apple.com/legal/internet-services/itunes/dev/stdeula/) also applies, and these terms add what is particular to Semnal. If you don't agree with them, please don't use the app. Questions go to [semnal@aigarden.uk](mailto:semnal@aigarden.uk).
 
@@ -18,13 +18,14 @@ Semnal is made by AI Garden, which is me, one developer. These are the terms for
 
 ## Alerts can fail or arrive late
 
-Semnal tells the people you chose by push notification. I can't promise that an alert arrives, or arrives in time. Among other things, an alert can fail when:
+Semnal tells the people you chose by push notification and, for a signal with SMS on, by SMS. I can't promise that an alert arrives, or arrives in time. Among other things, an alert can fail when:
 
-- your iPhone or theirs has no internet connection. Nobody is told until the connection is back;
+- your iPhone or theirs has no internet connection. Nobody is told by notification until the connection is back;
 - their notifications are off, or they've switched your alerts off;
-- their iPhone is silenced or in a Focus. Alerts arrive as normal notifications and don't sound on a silenced phone;
+- their iPhone is silenced. Alerts are time-sensitive notifications: they come through a Focus but don't sound on a silenced phone, unless Apple allows Semnal critical alerts and they've switched them on;
+- an SMS isn't sent: Messages opens with the text, and it goes only when you press Send, or when Critical SMS sends it by itself where iOS allows that. An SMS also needs your phone network;
 - your iPhone is switched off, runs out of battery, or the app is force-quit;
-- Apple's or Google's services, or my server, are not working.
+- Apple's or Google's services, your phone network, or my server, are not working.
 
 A person who gets your alert may not see it, and may not be able to help. Test your signals with the people you alert before you rely on them.
 
@@ -46,11 +47,11 @@ The app's Help has the full list. Read it before you need the app.
 
 ## Recording
 
-Semnal can record sound and video during an alarm. The law on recording other people is different from place to place. You're responsible for following the law where you are, and for what you do with your recordings.
+Semnal can record sound and video during an alarm, and a signal can send its recordings to the people it alerts. They can watch, save and share what they get, and a copy they keep stays with them. The law on recording other people is different from place to place. You're responsible for following the law where you are, and for what you do with your recordings.
 
 ## The people you alert
 
-- Add only people who agreed to be alerted by you. Both of you need Semnal.
+- Add only people and numbers that agreed to be alerted by you. For alerts in the app, both of you need Semnal; a number that gets an SMS doesn't.
 - Anyone who has your account key can receive the alarms sent to you. Keep it like a password.
 - Either of you can end the link at any time in Settings.
 
@@ -60,7 +61,7 @@ Don't use Semnal to frighten or harass anyone, to send false alarms, or to follo
 
 ## Your data
 
-The [Semnal Privacy Policy](/privacy) says what leaves your iPhone and how to delete it. The server keeps alarms for 7 days.
+The [Semnal Privacy Policy](/privacy) says what leaves your iPhone and how to delete it. The server keeps alarms and their recordings for 7 days, and each account has 500 MB for recordings.
 
 ## Price
 
