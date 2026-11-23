@@ -57,7 +57,7 @@ Your **account key** is your login. You find it in **Settings → Push Notificat
 - your phone number, so that person can add you to their SMS numbers;
 - your display name.
 
-Your iPhone puts your phone number into the code by itself. It goes only to the person who scans the code, never to my server.
+Your iPhone puts your phone number into the code by itself, and never sends it to my server. The code is a link to semnal.me: if the person who opens it has Semnal, the link opens the app directly and the website never sees it. If not, their browser opens semnal.me, and the link, with your number and name, reaches the website's host, GitHub Pages, which logs visitors' IP addresses for security. semnal.me has no analytics and I can't see those logs.
 
 ## Alerting people: what goes to my server
 
