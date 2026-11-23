@@ -8,7 +8,7 @@ permalink: /terms
 
 **Last updated: 23 November 2026**
 
-Semnal is made by AI Garden Ltd, my one-person company. These are the terms for using it. They're short on purpose. Apple's [standard licence for App Store apps](https://www.apple.com/legal/internet-services/itunes/dev/stdeula/) also applies, and these terms add what is particular to Semnal. If you don't agree with them, please don't use the app. Questions go to [beta@semnal.me](mailto:beta@semnal.me).
+Semnal is made by AI Garden Ltd, my one-person company. Where these terms say "I", "me" or "my", they mean AI Garden Ltd. These are the terms for using it. They're short on purpose. Apple's [standard licence for App Store apps](https://www.apple.com/legal/internet-services/itunes/dev/stdeula/) also applies, and these terms add what is particular to Semnal. If you don't agree with them, please don't use the app. Questions go to [beta@semnal.me](mailto:beta@semnal.me).
 
 ## Semnal is not an emergency service
 
