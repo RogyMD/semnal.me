@@ -117,7 +117,7 @@ appears at `https://semnal.me/news/YYYY/MM/title` and in a "News" list on the ho
 |---|---|
 | `_config.yml` | Site settings: `url: https://semnal.me`, the `jekyll-feed` plugin, post addresses, `include: [.well-known]`, and `app_store_id` (empty until the app has an App Store page) |
 | `CNAME` | `semnal.me` |
-| `index.html` | The home page (ring story) |
+| `index.html` | The home page (ring story), with the invite panel shown only for an invite link |
 | `assets/css/home.css` | The home page's own styles (the ring story), scoped to the home page |
 | `assets/js/ring.js` | The home page's script: scroll progress, tap the ring to go on, Reduce Motion list |
 | `privacy.md`, `terms.md` | Served at `/privacy` and `/terms` |
