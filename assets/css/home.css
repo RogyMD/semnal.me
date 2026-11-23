@@ -13,6 +13,7 @@
 .home .scene { --p: 0; position: relative; height: 560vh; }
 .home .stage {
   position: sticky; top: 0; height: 100vh; height: 100svh; overflow: hidden; background: var(--bg);
+  --cy: 40%;                              /* how far down the ring's centre sits */
   --R: min(36vw, 25vh, 290px);            /* radius of the outer orbit */
   --pw: calc(var(--R) * .25);             /* width of a small phone outline */
   --phh: calc(var(--pw) * 1.9);
@@ -23,7 +24,7 @@
 @supports (height: 1svh) { .home .stage { --R: min(36vw, 25svh, 290px); } }
 
 /* everything radial hangs off one zero-size point: the centre of the ring */
-.home .centre { position: absolute; left: 50%; top: 40%; width: 0; height: 0; }
+.home .centre { position: absolute; left: 50%; top: var(--cy); width: 0; height: 0; }
 .home .round { position: absolute; left: calc(var(--d) / -2); top: calc(var(--d) / -2); width: var(--d); height: var(--d); border-radius: 50%; pointer-events: none; }
 
 .home .orbit { border: 1px solid var(--line); }
@@ -72,14 +73,15 @@
 @media (min-width: 800px) { .home .chip { font-size: 12px; padding: 2px 10px; } }
 
 /* the words: under the ring, one caption per part of the story */
-.home .caps { position: absolute; left: 0; right: 0; bottom: 0; top: calc(40% + var(--R) + 16px); }
+.home .caps { position: absolute; left: 0; right: 0; bottom: 0; top: calc(var(--cy) + var(--R) + 16px); }
 .home .cap { position: absolute; left: 0; right: 0; top: 0; padding: 0 16px; text-align: center; pointer-events: none; }
 .home .cap > * { max-width: 600px; margin-left: auto; margin-right: auto; }
 .home .cap .kicker { font-size: 11px; margin: 0 0 4px; }
 .home .cap h2 { font-size: clamp(24px, min(5vw, 5.4vh), 46px); font-weight: 300; line-height: 1.12; letter-spacing: -0.02em; margin: 0 auto 8px; }
 .home .cap p.t { font-size: clamp(15px, 1.5vw, 18px); color: var(--muted); margin-top: 0; margin-bottom: 0; max-width: 460px; }
 .home .hero-cap { pointer-events: auto; }
-.home .stage.past .hero-cap { pointer-events: none; }
+/* Faded out: not clickable and not in the tab order either. */
+.home .stage.past .hero-cap { pointer-events: none; visibility: hidden; }
 .home h1 { font-size: clamp(40px, min(9vw, 10vh), 88px); font-weight: 200; line-height: 1; letter-spacing: -0.03em; margin: 0 auto; }
 .home .tag { font-size: clamp(16px, 2vw, 21px); font-weight: 300; margin-top: 6px; margin-bottom: 14px; }
 .home .sum { display: none; font-size: 16px; margin-top: -4px; margin-bottom: 16px; max-width: 460px; }
@@ -87,7 +89,7 @@
 .home .hint { font-size: 12px; margin-top: 10px; margin-bottom: 0; }
 
 /* ---------- tapping the ring: on every slide it moves to the next slide ---------- */
-.home .tapring { position: absolute; left: 50%; top: 40%; width: calc(var(--R) * 1.1); height: calc(var(--R) * 1.1);
+.home .tapring { position: absolute; left: 50%; top: var(--cy); width: calc(var(--R) * 1.1); height: calc(var(--R) * 1.1);
   transform: translate(-50%, -50%); border: 0; padding: 0; border-radius: 50%; background: transparent;
   cursor: pointer; -webkit-tap-highlight-color: transparent; z-index: 2; }
 .home .tapring:focus-visible { outline: 2px solid var(--text); outline-offset: 6px; }
@@ -96,13 +98,31 @@
 @keyframes tapgo { 0% { opacity: .9; transform: scale(.8); } 100% { opacity: 0; transform: scale(1.9); } }
 .home .tapnote { font-size: 12px; color: var(--muted); margin-top: 12px !important; margin-bottom: 0; }
 
+/* Short screens (a phone held sideways): the ring moves up and gets smaller, and the words get
+   smaller, so every caption and the hero's button still fit above the bottom edge. */
+@media (max-height: 560px) {
+  .home .stage { --cy: 27%; --R: min(36vw, 17vh, 290px); }
+  @supports (height: 1svh) { .home .stage { --R: min(36vw, 17svh, 290px); } }
+  .home .caps { top: calc(var(--cy) + var(--R) + 8px); }
+  .home .stage h1 { font-size: 30px; }
+  .home .stage .tag { font-size: 15px; margin: 2px 0 8px; }
+  .home .stage .btn { padding: 8px 20px; font-size: 15px; }
+  .home .stage .btnnote { margin-top: 4px; font-size: 11px; }
+  .home .stage .hint { margin-top: 4px; font-size: 11px; }
+  .home .cap h2 { font-size: 22px; margin-bottom: 4px; }
+  .home .cap p.t { font-size: 14px; line-height: 1.35; }
+  .home .cap .kicker { margin-bottom: 2px; }
+  .home .tapnote { margin-top: 4px !important; font-size: 11px; }
+}
+
 /* ---------- the story as a plain list ----------
    Shown by default: without JavaScript, and with Reduce Motion on. The pinned stage is shown only
    when the page is scripted (<html class="js">) and Reduce Motion is off (no .no-story). */
 .home .scene { display: none; }
 .home .storylist { display: block; padding: 72px 0 40px; }
-.js:not(.no-story) .home .scene { display: block; }
-.js:not(.no-story) .home .storylist { display: none; }
+/* .story-ready is set by ring.js once it runs: a script that never loads leaves the list in place. */
+.js.story-ready:not(.no-story) .home .scene { display: block; }
+.js.story-ready:not(.no-story) .home .storylist { display: none; }
 @media (prefers-reduced-motion: reduce) {
   .home .scene { display: none !important; }
   .home .storylist { display: block !important; }

@@ -10,7 +10,7 @@ extra_css: /assets/css/home.css
   The "Ask for the beta" link is the spec's mailto: exactly (D8); "&" is written as "&amp;" in the HTML.
 {%- endcomment -%}
 {%- capture beta_href -%}mailto:contact@semnal.me?subject=Semnal%20beta&amp;body=Hi%20Igor%2C%20I%27d%20like%20to%20test%20the%20Semnal%20app.%20Can%20I%20get%20the%20link%20to%20the%20beta%2C%20please%3F{%- endcapture -%}
-<div class="home">
+<main class="home">
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
   <defs>
     <linearGradient id="coral" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff7a59"/><stop offset="1" stop-color="#e2502f"/></linearGradient>
@@ -216,5 +216,5 @@ extra_css: /assets/css/home.css
     <p class="btnnote muted">It opens an email to me. I'll reply with the link when the beta is open.</p>
   </div>
 </section>
-</div>
+</main>
 <script src="{{ '/assets/js/ring.js' | relative_url }}" defer></script>

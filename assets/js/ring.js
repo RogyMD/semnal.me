@@ -41,11 +41,18 @@
     if (!ticking) { ticking = true; requestAnimationFrame(update); }
   }
 
+  // A tap while the smooth scroll of the last tap is still running steps on from that tap's slide,
+  // not from where the scroll happens to be.
+  var aiming = null; // { slide, at }
+  var AIM_MS = 1200;
+
   // Tapping the ring: a ripple, then a smooth scroll to the next slide. The scroll drives the glow and the
   // spreading rings, so the move between slides is the animation itself.
   tap.addEventListener('click', function () {
     update();
     var s = Number(stage.dataset.slide);
+    if (aiming && Date.now() - aiming.at < AIM_MS && aiming.slide > s) s = aiming.slide;
+    aiming = s < 4 ? { slide: s + 1, at: Date.now() } : null;
     tap.classList.remove('go');
     void tap.offsetWidth;
     tap.classList.add('go');
@@ -61,6 +68,8 @@
     if (reduce.addEventListener) reduce.addEventListener('change', applyMotion);
     else if (reduce.addListener) reduce.addListener(applyMotion);
   }
+  // The stage replaces the plain list only from here on: if this script never runs, the list stays.
+  html.classList.add('story-ready');
   applyMotion();
   update();
 })();

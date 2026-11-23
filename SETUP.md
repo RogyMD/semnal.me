@@ -77,7 +77,9 @@ Open each address; each must load without a 404:
 - `https://semnal.me/privacy` (no `.html`)
 - `https://semnal.me/terms` (no `.html`)
 - `https://semnal.me/feed.xml` (valid and empty until the first post)
-- `https://semnal.me/.well-known/apple-app-site-association` (shows the small JSON file)
+- `https://semnal.me/.well-known/apple-app-site-association` (the small JSON file; the browser may
+  download it instead of showing it, which is fine. GitHub Pages serves it without the
+  `application/json` type; check that Apple accepts it before the invite-link work relies on it)
 
 Then:
 
