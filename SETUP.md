@@ -80,6 +80,7 @@ Open each address; each must load without a 404:
 - `https://www.semnal.me` (must land on `https://semnal.me`)
 - `https://semnal.me/privacy` (no `.html`)
 - `https://semnal.me/terms` (no `.html`)
+- `https://semnal.me/voices` (no `.html`; the voice download help page)
 - `https://semnal.me/feed.xml` (valid and empty until the first post)
 - `https://semnal.me/.well-known/apple-app-site-association` (the small JSON file; the browser may
   download it instead of showing it, which is fine. GitHub Pages serves it as
@@ -121,9 +122,10 @@ appears at `https://semnal.me/news/YYYY/MM/title` and in a "News" list on the ho
 | `assets/css/home.css` | The home page's own styles (the ring story), scoped to the home page |
 | `assets/js/ring.js` | The home page's script: scroll progress, tap the ring to go on, Reduce Motion list |
 | `privacy.md`, `terms.md` | Served at `/privacy` and `/terms` |
+| `voices.md` | Served at `/voices`: how to download text-to-speech voices on iPhone |
 | `_layouts/` | `default` (head with the feed link, footer with `beta@semnal.me`, Privacy, Terms and RSS), `page`, `post` |
 | `_posts/` | News posts; empty for now |
-| `assets/` | CSS and the ring icon |
+| `assets/` | CSS, the ring icon, and the `/voices` screenshots in `assets/voices/` |
 | `.well-known/apple-app-site-association` | Tells iOS that invite links (`/?code=...` or `/?phone=...`) open the Semnal app; every other page stays in the browser |
 | `Gemfile` | Only for a local preview; GitHub ignores it |
 
