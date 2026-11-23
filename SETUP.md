@@ -57,16 +57,20 @@ and `https://semnal.me/terms`, so they must be live before the build goes to App
 1. Wait for DNS to spread (minutes to a few hours). GitHub then issues the certificate by itself.
 2. Tick **Enforce HTTPS** in **Settings → Pages** once the box becomes available.
 
-## 5. Mail for beta@semnal.me
+## 5. Mail for contact@semnal.me and beta@semnal.me
 
-1. Choose where mail for `beta@semnal.me` goes: a mailbox, or a forward to an inbox you
-   already read. Create the address there.
+Both addresses must exist. `contact@semnal.me` is the contact address in the privacy policy.
+`beta@semnal.me` gets the "Ask for the beta" emails and is the address in the footer and the terms.
+
+1. Choose where mail for `contact@semnal.me` and `beta@semnal.me` goes: a mailbox, or a forward
+   to an inbox you already read. Create both addresses there.
 2. At the registrar, add the MX records that provider gives, and its SPF TXT record. Add DKIM and
    DMARC records if the provider offers them. Leave GitHub's A, CNAME and TXT records as they are.
-3. Send a test mail to `beta@semnal.me` from another address and check it arrives. Reply from
-   it and check the reply is delivered.
+3. Send a test mail to `contact@semnal.me` and one to `beta@semnal.me` from another address and
+   check both arrive. Reply from each and check the reply is delivered.
 4. **Do not launch** (do not tell App Store Connect or anyone the site is live) until step 3
-   works: the footer, the privacy policy and the terms all point people to this address.
+   works for both: the footer, the privacy policy, the terms and the "Ask for the beta" button
+   point people to these addresses.
 
 ## 6. Check
 
@@ -85,7 +89,7 @@ Then:
 
 - On `https://semnal.me`, tap the ring through every slide; with Reduce Motion on, the story is a
   list.
-- A mail to `beta@semnal.me` arrives.
+- A mail to `contact@semnal.me` and one to `beta@semnal.me` both arrive.
 
 ## Publishing a post
 

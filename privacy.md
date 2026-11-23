@@ -8,7 +8,7 @@ permalink: /privacy
 
 **Last updated: 23 November 2026**
 
-Semnal is made by AI Garden, which is me, one developer. This page explains what happens to your information when you use Semnal on iPhone. If anything here is unclear, write to me at [beta@semnal.me](mailto:beta@semnal.me).
+Semnal is made by AI Garden, which is me, one developer. This page explains what happens to your information when you use Semnal on iPhone. If anything here is unclear, write to me at [contact@semnal.me](mailto:contact@semnal.me).
 
 ## The short version
 
@@ -137,10 +137,10 @@ I don't share any of this with anyone else, and I don't sell it.
 - **Recordings** on the server can be deleted sooner in **Settings → Cloud storage**.
 - **Deleting the app** removes the signals, settings, history and recordings it stored on that iPhone. It doesn't remove videos in your Photos, the copy of your signals and settings in iCloud, or your record on my server. Use **Remove All Data** first if you want those gone too. Otherwise recordings on the server still go after 7 days, and the rest a year after your account was last in use.
 - **The iCloud copy:** on iPhone, open **Settings**, tap your name, then **iCloud**, open the storage list, choose the app and delete its data.
-- **Your record on my server, if you can't use the app:** email me at [beta@semnal.me](mailto:beta@semnal.me) and I'll delete your account, display name, push tokens, links, storage count and key record by hand. Your account is anonymous, so I can't find it from your email address. Send me your account key from **Settings → Push Notification → Account key**, and I'll use it to find your record. The key stops working once the account is deleted. If you have no key, send me your display name and the name of one person you alert.
+- **Your record on my server, if you can't use the app:** email me at [contact@semnal.me](mailto:contact@semnal.me) and I'll delete your account, display name, push tokens, links, storage count and key record by hand. Your account is anonymous, so I can't find it from your email address. Send me your account key from **Settings → Push Notification → Account key**, and I'll use it to find your record. The key stops working once the account is deleted. If you have no key, send me your display name and the name of one person you alert.
 - **Emails:** ask me and I'll delete our conversation.
 
-Wherever you live, you can ask me what I hold about you, or ask me to correct or delete it, at beta@semnal.me.
+Wherever you live, you can ask me what I hold about you, or ask me to correct or delete it, at contact@semnal.me.
 
 ## Children
 
@@ -153,4 +153,4 @@ If Semnal starts handling your data differently, I'll update this page and the d
 ## Contact
 
 AI Garden<br>
-Email: [beta@semnal.me](mailto:beta@semnal.me)
+Email: [contact@semnal.me](mailto:contact@semnal.me)
