@@ -2,39 +2,219 @@
 layout: default
 title: Semnal
 description: "Instant Signal for Help. One tap turns your iPhone into a siren, a flashing light and a message to the people you chose."
+extra_css: /assets/css/home.css
 ---
+<script>document.documentElement.classList.add('js')</script>
 {%- comment -%}
-  Placeholder home page. It is replaced by the T114 page once the owner picks a mockup.
+  The home page: "The ring is the page" (mockup 04, approved 2026-11-22).
+  The "Ask for the beta" link is the spec's mailto: exactly (D8); "&" is written as "&amp;" in the HTML.
 {%- endcomment -%}
-<main>
-  <section class="hero">
-    <div class="wrap">
-      <span class="mark" aria-hidden="true">
-        <svg class="ring" viewBox="0 0 100 100">
-          <defs><linearGradient id="coral" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff7a59"/><stop offset="1" stop-color="#e2502f"/></linearGradient></defs>
-          <circle cx="50" cy="50" r="38" fill="none" stroke="url(#coral)" stroke-width="22"/>
+{%- capture beta_href -%}mailto:contact@semnal.me?subject=Semnal%20beta&amp;body=Hi%20Igor%2C%20I%27d%20like%20to%20test%20the%20Semnal%20app.%20Can%20I%20get%20the%20link%20to%20the%20beta%2C%20please%3F{%- endcapture -%}
+<div class="home">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <linearGradient id="coral" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff7a59"/><stop offset="1" stop-color="#e2502f"/></linearGradient>
+  </defs>
+</svg>
+
+<div class="scene" id="scene">
+  <div class="stage" id="stage">
+    <div class="centre" aria-hidden="true">
+      <span class="round glow"><i></i></span>
+      <span class="round orbit o1"></span><span class="round orbit o2"></span><span class="round orbit o3"></span>
+      <span class="round wave" style="--w0:.38"></span>
+      <span class="round wave" style="--w0:.43"></span>
+      <span class="round wave" style="--w0:.48"></span>
+      <span class="round travel"></span>
+
+      <span class="round ring">
+        <svg viewBox="0 0 100 100">
+          <circle class="fill" cx="50" cy="50" r="23" fill="url(#coral)"/>
+          <circle cx="50" cy="50" r="30.5" fill="none" stroke="url(#coral)" stroke-width="18.6"/>
         </svg>
       </span>
+
+      <span class="tagl l-top win" style="--from:.4;--to:.585">Video recording<br>Audio recording</span>
+      <span class="tagl l-left win" style="--from:.4;--to:.585">Siren<br>Spoken words</span>
+      <span class="tagl l-right win" style="--from:.4;--to:.585">Torch<br>Flashing screen</span>
+
+      <div class="person" style="--x:0;--y:-.74;--at:.68">
+        <div class="ph"><i class="lit"><b></b><s></s><s></s><s></s></i></div>
+        <div class="chip up">
+          <span class="win" style="--from:.68;--to:.76">Sent</span>
+          <span class="win" style="--from:.76;--to:.84">Delivered</span>
+          <span class="win" style="--from:.84;--to:2">Seen</span>
+        </div>
+      </div>
+      <div class="person" style="--x:.762;--y:.44;--at:.78">
+        <div class="ph"><i class="lit"><b></b><s></s><s></s><s></s></i></div>
+        <div class="chip">
+          <span class="win" style="--from:.78;--to:.84">Sent</span>
+          <span class="win" style="--from:.84;--to:.9">Delivered</span>
+          <span class="win" style="--from:.9;--to:2">Seen</span>
+        </div>
+      </div>
+      <div class="person" style="--x:-.866;--y:.5;--at:.88">
+        <div class="ph"><i class="lit"><b></b><s></s><s></s><s></s></i></div>
+        <div class="chip">
+          <span class="win" style="--from:.88;--to:.92">Sent</span>
+          <span class="win" style="--from:.92;--to:.96">Delivered</span>
+          <span class="win" style="--from:.96;--to:2">Seen</span>
+        </div>
+      </div>
+    </div>
+
+    <button class="tapring" id="tapring" type="button" aria-label="Next: it starts with one tap"></button>
+
+    <div class="caps">
+      <header class="cap hero-cap win" style="--from:-1;--to:.07">
+        <h1>Semnal</h1>
+        <p class="tag muted">Instant Signal for Help</p>
+        <p class="sum muted">One tap turns your iPhone into a siren, a flashing light and a message to the people you chose.</p>
+        {%- comment -%} Replaced by "Join the TestFlight" once the public TestFlight link exists. {%- endcomment %}
+        <a class="btn" href="{{ beta_href }}">Ask for the beta</a>
+        <p class="btnnote muted">It opens an email to me. I'll reply with the link when the beta is open.</p>
+        <p class="hint muted">Tap the ring, or scroll ↓</p>
+      </header>
+      <div class="cap win" style="--from:.05;--to:.36">
+        <p class="kicker">One tap</p>
+        <h2>It starts with one tap</h2>
+        <p class="t">Or one press, or one shake. You choose how, before you need it.</p>
+        <p class="tapnote">Tap the ring, or scroll</p>
+      </div>
+      <div class="cap win" style="--from:.36;--to:.58">
+        <p class="kicker">What it does</p>
+        <h2>Your iPhone becomes the signal</h2>
+        <p class="t">Siren, spoken words, torch, flashing screen, video recording, audio recording. You choose what your phone does.</p>
+        <p class="tapnote">Tap the ring, or scroll</p>
+      </div>
+      <div class="cap win" style="--from:.58;--to:.8">
+        <p class="kicker">Then</p>
+        <h2>The signal leaves your phone</h2>
+        <p class="t">A person you paired with gets your name, your message and, if you choose, where you are.</p>
+        <p class="tapnote">Tap the ring, or scroll</p>
+      </div>
+      <div class="cap win" style="--from:.8;--to:2">
+        <p class="kicker">Then</p>
+        <h2>Everyone you chose is told</h2>
+        <p class="t">You see for each of them: Sent, Delivered, Seen. Each gets an urgent alert. If the signal has SMS on, Messages opens with your text and where you are, ready to send.</p>
+        <p class="tapnote">Tap the ring, or scroll</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Reduce Motion or no JavaScript: the same story as a plain list, shown instead of the slides -->
+<div class="storylist">
+  <div class="wrap">
+    <div class="head">
+      <svg viewBox="0 0 100 100" aria-hidden="true" focusable="false"><circle cx="50" cy="50" r="30.5" fill="none" stroke="url(#coral)" stroke-width="18.6"/></svg>
       <h1>Semnal</h1>
       <p class="tag muted">Instant Signal for Help</p>
-      <p class="sum muted">One tap turns your iPhone into a siren, a flashing light and a message to the people you chose.</p>
-      <ul class="links">
-        <li><a href="{{ '/privacy' | relative_url }}">Privacy Policy</a></li>
-        <li><a href="{{ '/terms' | relative_url }}">Terms</a></li>
-        <li><a href="{{ '/feed.xml' | relative_url }}">RSS</a></li>
-      </ul>
+      <p class="muted sumline">One tap turns your iPhone into a siren, a flashing light and a message to the people you chose.</p>
+      {%- comment -%} Replaced by "Join the TestFlight" once the public TestFlight link exists. {%- endcomment %}
+      <a class="btn" href="{{ beta_href }}">Ask for the beta</a>
+      <p class="btnnote muted">It opens an email to me. I'll reply with the link when the beta is open.</p>
     </div>
-  </section>
+    <ol>
+      <li><p class="kicker">One tap</p><h2>It starts with one tap</h2><p class="t">Or one press, or one shake. You choose how, before you need it.</p></li>
+      <li><p class="kicker">What it does</p><h2>Your iPhone becomes the signal</h2><p class="t">Siren, spoken words, torch, flashing screen, video recording, audio recording. You choose what your phone does.</p></li>
+      <li><p class="kicker">Then</p><h2>The signal leaves your phone</h2><p class="t">A person you paired with gets your name, your message and, if you choose, where you are.</p></li>
+      <li><p class="kicker">Then</p><h2>Everyone you chose is told</h2><p class="t">You see for each of them: Sent, Delivered, Seen. Each gets an urgent alert. If the signal has SMS on, Messages opens with your text and where you are, ready to send.</p></li>
+    </ol>
+  </div>
+</div>
+
+<section class="plain" id="who">
+  <div class="wrap">
+    <h2>Who it is for</h2>
+    <p class="lead muted">You set it up, for yourself and for your family.</p>
+    <div class="trio who">
+      <article>
+        <div class="disc"><i style="--a:-40deg"></i><h3>For you</h3></div>
+        <p>For anyone who walks, works or travels alone. A signal of your own: siren, light, video and audio recording, and the people you chose told with one tap.</p>
+        <p class="limit">It does not call or alert emergency services.</p>
+      </article>
+      <article>
+        <div class="disc"><i style="--a:70deg"></i><h3>For vulnerable people and their family</h3></div>
+        <p>Older parents, teenagers, people living alone. Set it up together on a quiet day and pair the family by QR code. When they need anything, one tap tells all of you: their name, their message and, if they choose, where they are.</p>
+        <p class="limit">Not a medical alert device: nobody watches over it and it does not call an ambulance. It needs an iPhone and the internet on both sides. For teenagers: 13 and over, and a recording is not a promise of evidence; laws on recording and consent differ by country, and many schools restrict phones and recording.</p>
+      </article>
+      <article>
+        <div class="disc"><i style="--a:200deg"></i><h3>If someone comes at you</h3></div>
+        <p>A sudden siren and a flashing light can startle someone who jumps at you and draw the attention of people nearby, while your people are told and, if you choose, where you are.</p>
+        <p class="limit">It cannot stop an attack or keep anyone safe, and how a person reacts to it is out of my hands. It does not call or alert the police.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="plain alt">
+  <div class="wrap">
+    <h2>More it can do</h2>
+    <p class="lead muted">Recording, Guard and a stop gesture.</p>
+    <div class="trio more">
+      <article>
+        <svg class="ico" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><circle class="hair" cx="32" cy="32" r="30"/><circle cx="32" cy="32" r="17"/><circle class="dot" cx="32" cy="32" r="6"/></svg>
+        <h3>Recording</h3>
+        <p>A signal can record sound and video for as long as the alarm runs. With Save to Photos on, videos go to your Photos; the app keeps a small copy with the place and time stamped on it.</p>
+      </article>
+      <article>
+        <svg class="ico" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><circle class="hair" cx="32" cy="32" r="30"/><path d="M14 40h36"/><rect x="18" y="33" width="28" height="5" rx="2.5"/><path d="M22 26a12 12 0 0 1 20 0"/><path d="M27 21a8 8 0 0 1 10 0" class="hair"/></svg>
+        <h3>Guard</h3>
+        <p>Leaving your phone on a table or on a charger? Press Guard and put it face down. If someone lifts it or pulls the cable, your signal starts.</p>
+      </article>
+      <article>
+        <svg class="ico" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><circle class="hair" cx="32" cy="32" r="30"/><circle cx="32" cy="32" r="17"/><path d="M12 40c10-18 16 8 22-6s8-10 18-12"/></svg>
+        <h3>Stop gesture</h3>
+        <p>Only you stop the alarm: with a gesture you draw across a face on the screen, or with Face ID.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="plain">
+  <div class="wrap">
+    <div class="panels">
+      <div class="panel">
+        <h3>What it cannot do</h3>
+        <ul>
+          <li>It does not call or alert the police or emergency services.</li>
+          <li>Force-quitting the app or switching the phone off stops it. No app can prevent that.</li>
+          <li>With the phone locked or another app in front, the screen light goes off, video pauses and the guard watches nothing. The sound is meant to keep playing.</li>
+          <li>Push alerts need the internet.</li>
+          <li>Alerts don't sound on a silenced iPhone until Apple allows critical alerts.</li>
+          <li>This is a TestFlight. Some parts are still being tested on real phones; tell me what fails.</li>
+        </ul>
+        <p class="small muted">Flashing light can trigger seizures in people with photosensitive epilepsy.</p>
+      </div>
+      <div class="panel">
+        <h3>Private by design</h3>
+        <p class="muted plainline">No sign-up and no ads. Your signals, settings and history stay on your iPhone. Alerts, and recordings a signal sends to your people, pass through my server and are deleted after 7 days.</p>
+      </div>
+    </div>
+  </div>
+</section>
 {%- if site.posts.size > 0 %}
-  <section class="news" id="news">
-    <div class="wrap">
-      <h2>News</h2>
-      <ul>
-      {%- for post in site.posts %}
-        <li><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%-d %b %Y" }}</time><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
-      {%- endfor %}
-      </ul>
-    </div>
-  </section>
+<section class="news" id="news">
+  <div class="wrap">
+    <h2>News</h2>
+    <ul>
+    {%- for post in site.posts %}
+      <li><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%-d %b %Y" }}</time><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+    {%- endfor %}
+    </ul>
+  </div>
+</section>
 {%- endif %}
-</main>
+
+<section class="plain close">
+  <div class="wrap">
+    <h2>Set it up on a quiet day. Hope you never need it.</h2>
+    {%- comment -%} Replaced by "Join the TestFlight" once the public TestFlight link exists. {%- endcomment %}
+    <a class="btn" href="{{ beta_href }}">Ask for the beta</a>
+    <p class="btnnote muted">It opens an email to me. I'll reply with the link when the beta is open.</p>
+  </div>
+</section>
+</div>
+<script src="{{ '/assets/js/ring.js' | relative_url }}" defer></script>
