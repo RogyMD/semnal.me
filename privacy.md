@@ -12,7 +12,7 @@ Semnal is made by AI Garden, which is me, one developer. This page explains what
 
 ## The short version
 
-- Your signals, settings, history and recordings stay on your iPhone. Recordings go to my server only for a signal that sends them to your people, and the server deletes them after 7 days.
+- Your signals and settings stay on your iPhone and, if you use iCloud, in your own iCloud account. Your history and recordings stay on your iPhone. Recordings go to my server only for a signal that sends them to your people, and the server deletes them after 7 days.
 - Semnal has no sign-up. I never ask for your email address or a password, and your phone number never goes to my server. The app makes an anonymous account for you, which is a random ID.
 - If you choose people to alert, an alarm goes to them through a server I run on Google Firebase. It carries your display name, your message and, only if the signal has **Insert location** on, where you are. If the signal has **Attach video** or **Attach audio** on, it also carries your recordings. The server deletes alarms and recordings after 7 days.
 - An SMS goes from your own iPhone, through Messages, and never passes through my server.
