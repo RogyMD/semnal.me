@@ -82,8 +82,13 @@ Open each address; each must load without a 404:
 - `https://semnal.me/terms` (no `.html`)
 - `https://semnal.me/feed.xml` (valid and empty until the first post)
 - `https://semnal.me/.well-known/apple-app-site-association` (the small JSON file; the browser may
-  download it instead of showing it, which is fine. GitHub Pages serves it without the
-  `application/json` type; check that Apple accepts it before the invite-link work relies on it)
+  download it instead of showing it, which is fine. GitHub Pages serves it as
+  `application/octet-stream`, and Apple's CDN accepts that: its copy at
+  `https://app-site-association.cdn-apple.com/a/v1/semnal.me` shows `Apple-Origin-Format: json`.
+  The CDN picks up a changed file within 24 hours)
+- `https://semnal.me/?code=c1&phone=%2B447700900123&name=Ann` (an invite link: on an iPhone with
+  Semnal it opens the app; anywhere else the home page shows the invite panel and the address bar
+  changes to `https://semnal.me/`)
 
 Then:
 
@@ -110,16 +115,16 @@ appears at `https://semnal.me/news/YYYY/MM/title` and in a "News" list on the ho
 
 | File | What it is |
 |---|---|
-| `_config.yml` | Site settings: `url: https://semnal.me`, the `jekyll-feed` plugin, post addresses, and `include: [.well-known]` |
+| `_config.yml` | Site settings: `url: https://semnal.me`, the `jekyll-feed` plugin, post addresses, `include: [.well-known]`, and `app_store_id` (empty until the app has an App Store page) |
 | `CNAME` | `semnal.me` |
-| `index.html` | The home page (ring story) |
+| `index.html` | The home page (ring story), with the invite panel shown only for an invite link |
 | `assets/css/home.css` | The home page's own styles (the ring story), scoped to the home page |
 | `assets/js/ring.js` | The home page's script: scroll progress, tap the ring to go on, Reduce Motion list |
 | `privacy.md`, `terms.md` | Served at `/privacy` and `/terms` |
 | `_layouts/` | `default` (head with the feed link, footer with `beta@semnal.me`, Privacy, Terms and RSS), `page`, `post` |
 | `_posts/` | News posts; empty for now |
 | `assets/` | CSS and the ring icon |
-| `.well-known/apple-app-site-association` | Empty `applinks` for now; the invite-link work fills it |
+| `.well-known/apple-app-site-association` | Tells iOS that invite links (`/?code=...` or `/?phone=...`) open the Semnal app; every other page stays in the browser |
 | `Gemfile` | Only for a local preview; GitHub ignores it |
 
 ## Local preview (optional)

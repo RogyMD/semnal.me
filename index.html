@@ -12,6 +12,45 @@ extra_css: /assets/css/home.css
 {%- endcomment -%}
 {%- capture beta_href -%}mailto:beta@semnal.me?subject=Semnal%20beta&amp;body=Hi%20Igor%2C%20I%27d%20like%20to%20test%20the%20Semnal%20app.%20Can%20I%20get%20the%20link%20to%20the%20beta%2C%20please%3F{%- endcapture -%}
 <main class="home">
+{%- comment -%}
+  The invite panel. An invite link is https://semnal.me/?code=...&phone=...&name=... (the app writes it into
+  the QR code and the share button). With Semnal installed, iOS opens the app and this page is never
+  loaded (/.well-known/apple-app-site-association). Otherwise GitHub Pages serves this page with the
+  query, and the script below shows the panel. The plain home page has no code and no phone, so the
+  panel stays hidden. A link back to https://semnal.me would not open the app (same domain), so the
+  open button uses the semnal:// form every build reads. The page never shows the number or the name,
+  and no analytics or third-party script may run here: they would read the query.
+{%- endcomment %}
+<section class="invite" id="invite" hidden>
+  <div class="wrap">
+    <h2>Someone shared their Semnal code with you</h2>
+    <p class="muted">To add them, you need Semnal on this iPhone.</p>
+    {%- if site.app_store_id and site.app_store_id != "" %}
+    <a class="btn" href="https://apps.apple.com/app/id{{ site.app_store_id }}">Get Semnal on the App Store</a>
+    {%- else %}
+    <a class="btn" href="{{ beta_href }}">Ask for the beta</a>
+    <p class="btnnote muted">It opens an email to me. I'll reply with the link when the beta is open.</p>
+    {%- endif %}
+    <p class="open"><a id="invite-open" href="/">I have Semnal: open the code in the app</a></p>
+  </div>
+</section>
+<script>
+(function () {
+  // A literal "+" would read as a space here; the app always writes %2B, a typed link may not.
+  var q = new URLSearchParams(location.search.replace(/\+/g, '%2B'));
+  var code = q.get('code'), phone = q.get('phone'), name = q.get('name') || '';
+  if (!code && !phone) return;
+  // The same invite in the semnal:// form: me=<code>&n=<name>&p=<phone>.
+  var pairs = [];
+  if (code) pairs.push('me=' + encodeURIComponent(code));
+  pairs.push('n=' + encodeURIComponent(name));
+  if (phone) pairs.push('p=' + encodeURIComponent(phone));
+  document.getElementById('invite-open').href = 'semnal://' + pairs.join('&');
+  document.getElementById('invite').hidden = false;
+  // The number leaves the address bar, history and any bookmark; the button keeps it.
+  history.replaceState(null, '', '/');
+})();
+</script>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
   <defs>
     <linearGradient id="coral" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff7a59"/><stop offset="1" stop-color="#e2502f"/></linearGradient>

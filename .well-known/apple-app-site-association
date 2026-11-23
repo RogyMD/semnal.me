@@ -1,5 +1,21 @@
 {
   "applinks": {
-    "details": []
+    "details": [
+      {
+        "appIDs": [ "TJ8B8QR398.ai.garden.sosbutton" ],
+        "components": [
+          {
+            "/": "/",
+            "?": { "code": "?*" },
+            "comment": "An invite with a push code: https://semnal.me/?code=..."
+          },
+          {
+            "/": "/",
+            "?": { "phone": "?*" },
+            "comment": "An invite with a phone number for SMS: https://semnal.me/?phone=..."
+          }
+        ]
+      }
+    ]
   }
 }

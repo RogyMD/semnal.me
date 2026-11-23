@@ -4,6 +4,11 @@ url: https://semnal.me
 baseurl: ""
 lang: en
 
+# Semnal's App Store ID (the digits in apps.apple.com/app/id...). Empty until the app has a
+# page. Once set, the invite panel on the home page offers the App Store instead of the beta
+# email, and every page shows the Smart App Banner.
+app_store_id: ""
+
 markdown: kramdown
 kramdown:
   input: GFM
