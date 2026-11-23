@@ -11,8 +11,8 @@ and `https://semnal.me/terms`, so they must be live before the build goes to App
 
 - Read the "Must confirm before publishing" lists in
   `ai-garden-blog/pages/semnal/privacy-policy/NOTE.md` and `pages/semnal/terms/NOTE.md`.
-  `privacy.md` and `terms.md` here are those texts; only the terms link to the privacy policy
-  changed (now `/privacy`).
+  `privacy.md` and `terms.md` here started from those texts and have since been brought in line
+  with the app on its main branch; they are the texts to publish.
 - Compare the four A-record addresses below with GitHub's page "Managing a custom domain for
   your GitHub Pages site". They were written from memory, not read from GitHub today.
 - If `semnal.me` has CAA records at the registrar, they must allow `letsencrypt.org`, or the
@@ -49,15 +49,26 @@ and `https://semnal.me/terms`, so they must be live before the build goes to App
    | TXT | as GitHub shows in step 2.2 | as GitHub shows in step 2.2 |
 
    `<account>` is the GitHub account that owns the repository. Some registrars write `@` as an
-   empty name or as `semnal.me`. No MX records are needed (mail stays at `semnal@aigarden.uk`).
-   No AAAA (IPv6) records at launch.
+   empty name or as `semnal.me`. No AAAA (IPv6) records at launch. The mail records come in
+   step 5.
 
 ## 4. HTTPS
 
 1. Wait for DNS to spread (minutes to a few hours). GitHub then issues the certificate by itself.
 2. Tick **Enforce HTTPS** in **Settings → Pages** once the box becomes available.
 
-## 5. Check
+## 5. Mail for contact@semnal.me
+
+1. Choose where mail for `contact@semnal.me` goes: a mailbox, or a forward to an inbox you
+   already read. Create the address there.
+2. At the registrar, add the MX records that provider gives, and its SPF TXT record. Add DKIM and
+   DMARC records if the provider offers them. Leave GitHub's A, CNAME and TXT records as they are.
+3. Send a test mail to `contact@semnal.me` from another address and check it arrives. Reply from
+   it and check the reply is delivered.
+4. **Do not launch** (do not tell App Store Connect or anyone the site is live) until step 3
+   works: the footer, the privacy policy and the terms all point people to this address.
+
+## 6. Check
 
 Open each address; each must load without a 404:
 
@@ -67,6 +78,12 @@ Open each address; each must load without a 404:
 - `https://semnal.me/terms` (no `.html`)
 - `https://semnal.me/feed.xml` (valid and empty until the first post)
 - `https://semnal.me/.well-known/apple-app-site-association` (shows the small JSON file)
+
+Then:
+
+- On `https://semnal.me`, tap the ring through every slide; with Reduce Motion on, the story is a
+  list.
+- A mail to `contact@semnal.me` arrives.
 
 ## Publishing a post
 
@@ -89,9 +106,11 @@ appears at `https://semnal.me/news/YYYY/MM/title` and in a "News" list on the ho
 |---|---|
 | `_config.yml` | Site settings: `url: https://semnal.me`, the `jekyll-feed` plugin, post addresses, and `include: [.well-known]` |
 | `CNAME` | `semnal.me` |
-| `index.html` | Placeholder home page; replaced by the T114 page once you pick a mockup |
+| `index.html` | The home page (ring story) |
+| `assets/css/home.css` | The home page's own styles (the ring story), scoped to the home page |
+| `assets/js/ring.js` | The home page's script: scroll progress, tap the ring to go on, Reduce Motion list |
 | `privacy.md`, `terms.md` | Served at `/privacy` and `/terms` |
-| `_layouts/` | `default` (head with the feed link, footer with Privacy, Terms and RSS), `page`, `post` |
+| `_layouts/` | `default` (head with the feed link, footer with `contact@semnal.me`, Privacy, Terms and RSS), `page`, `post` |
 | `_posts/` | News posts; empty for now |
 | `assets/` | CSS and the ring icon |
 | `.well-known/apple-app-site-association` | Empty `applinks` for now; the invite-link work fills it |
