@@ -7,6 +7,13 @@
 <meta name="description" content="{{ page.description | default: site.description | strip_html | strip_newlines | escape }}">
 <link rel="canonical" href="{{ page.url | absolute_url }}">
 <meta name="theme-color" content="#f0603f">
+{%- comment -%}
+  No referrer to other sites: an invite link (/?code=...&phone=...) carries a phone number in its query.
+{%- endcomment %}
+<meta name="referrer" content="no-referrer">
+{%- if site.app_store_id and site.app_store_id != "" %}
+<meta name="apple-itunes-app" content="app-id={{ site.app_store_id }}">
+{%- endif %}
 <link rel="icon" href="{{ '/assets/ring.svg' | relative_url }}" type="image/svg+xml">
 <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}">
 {% if page.extra_css %}<link rel="stylesheet" href="{{ page.extra_css | relative_url }}">

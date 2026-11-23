@@ -9,6 +9,14 @@
 .home .btn:focus-visible { outline: 2px solid var(--text); outline-offset: 3px; }
 .home .btnnote { font-size: 12px; margin: 8px auto 0; }
 
+/* ---------- the invite panel: shown above the story only for an invite link (/?code=...&phone=...) ---------- */
+.home .invite[hidden] { display: none; }
+.home .invite { padding: 48px 0 40px; text-align: center; background: var(--bg2); border-bottom: 1px solid var(--line); }
+.home .invite h2 { font-size: clamp(26px, 5vw, 40px); font-weight: 300; line-height: 1.15; letter-spacing: -0.02em; margin: 0 auto 8px; max-width: 600px; }
+.home .invite p { max-width: 520px; margin: 0 auto 18px; }
+.home .invite .btnnote { margin-bottom: 0; }
+.home .invite .open { margin: 22px auto 0; font-weight: 600; }
+
 /* ---------- the scene: a tall block with one pinned stage ---------- */
 .home .scene { --p: 0; position: relative; height: 560vh; }
 .home .stage {
