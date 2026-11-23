@@ -8,7 +8,7 @@ permalink: /terms
 
 **Last updated: 23 November 2026**
 
-Semnal is made by AI Garden, which is me, one developer. These are the terms for using it. They're short on purpose. Apple's [standard licence for App Store apps](https://www.apple.com/legal/internet-services/itunes/dev/stdeula/) also applies, and these terms add what is particular to Semnal. If you don't agree with them, please don't use the app. Questions go to [contact@semnal.me](mailto:contact@semnal.me).
+Semnal is made by AI Garden, which is me, one developer. These are the terms for using it. They're short on purpose. Apple's [standard licence for App Store apps](https://www.apple.com/legal/internet-services/itunes/dev/stdeula/) also applies, and these terms add what is particular to Semnal. If you don't agree with them, please don't use the app. Questions go to [beta@semnal.me](mailto:beta@semnal.me).
 
 ## Semnal is not an emergency service
 
@@ -78,4 +78,4 @@ If these terms change, I'll update this page and the date at the top.
 ## Contact
 
 AI Garden<br>
-Email: [contact@semnal.me](mailto:contact@semnal.me)
+Email: [beta@semnal.me](mailto:beta@semnal.me)

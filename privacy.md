@@ -120,7 +120,7 @@ Plain notifications with your display name also go out when you confirm you're s
 
 - **What's on the server,** as described above.
 - **Emails you send me.** When you tap a feedback link in Settings, Semnal opens an email to me. It adds the app's version and build at the bottom. You can read or delete that line before you send. I use your email only to reply, and I keep it only as long as I need to.
-- **Emails asking for the beta.** The Ask for the beta button on semnal.me only opens an email in your own mail app. If you send it, it reaches only my mailbox at contact@semnal.me; no form or mailing-list service sees it. I use it only to send you the beta link, and I delete it if you ask.
+- **Emails asking for the beta.** The Ask for the beta button on semnal.me only opens an email in your own mail app. If you send it, it reaches only my mailbox at beta@semnal.me; no form or mailing-list service sees it. I use it only to send you the beta link, and I delete it if you ask.
 - **Apple's reports,** if you share them, as described above.
 
 I don't share any of this with anyone else, and I don't sell it.

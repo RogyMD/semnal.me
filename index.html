@@ -7,9 +7,10 @@ extra_css: /assets/css/home.css
 <script>document.documentElement.classList.add('js')</script>
 {%- comment -%}
   The home page: "The ring is the page" (mockup 04, approved 2026-11-22).
-  The "Ask for the beta" link is the spec's mailto: exactly (D8); "&" is written as "&amp;" in the HTML.
+  The "Ask for the beta" link is the spec's mailto: (D8), subject and body exactly; the address is
+  beta@semnal.me since T130. "&" is written as "&amp;" in the HTML.
 {%- endcomment -%}
-{%- capture beta_href -%}mailto:contact@semnal.me?subject=Semnal%20beta&amp;body=Hi%20Igor%2C%20I%27d%20like%20to%20test%20the%20Semnal%20app.%20Can%20I%20get%20the%20link%20to%20the%20beta%2C%20please%3F{%- endcapture -%}
+{%- capture beta_href -%}mailto:beta@semnal.me?subject=Semnal%20beta&amp;body=Hi%20Igor%2C%20I%27d%20like%20to%20test%20the%20Semnal%20app.%20Can%20I%20get%20the%20link%20to%20the%20beta%2C%20please%3F{%- endcapture -%}
 <main class="home">
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
   <defs>
