@@ -8,7 +8,7 @@ permalink: /privacy
 
 **Last updated: 23 November 2026**
 
-Semnal is made by AI Garden, which is me, one developer. This page explains what happens to your information when you use Semnal on iPhone. If anything here is unclear, write to me at [contact@semnal.me](mailto:contact@semnal.me).
+Semnal is made by AI Garden Ltd, my one-person company. AI Garden Ltd is responsible for your data, and where this page says "I", "me" or "my", it means AI Garden Ltd. This page explains what happens to your information when you use Semnal on iPhone. If anything here is unclear, write to me at [contact@semnal.me](mailto:contact@semnal.me).
 
 ## The short version
 
@@ -152,5 +152,5 @@ If Semnal starts handling your data differently, I'll update this page and the d
 
 ## Contact
 
-AI Garden<br>
+AI Garden Ltd<br>
 Email: [contact@semnal.me](mailto:contact@semnal.me)
