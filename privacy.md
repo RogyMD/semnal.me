@@ -6,9 +6,9 @@ permalink: /privacy
 
 # Semnal Privacy Policy
 
-**Last updated: 21 November 2026**
+**Last updated: 23 November 2026**
 
-Semnal is made by AI Garden, which is me, one developer. This page explains what happens to your information when you use Semnal on iPhone. If anything here is unclear, write to me at [semnal@aigarden.uk](mailto:semnal@aigarden.uk).
+Semnal is made by AI Garden, which is me, one developer. This page explains what happens to your information when you use Semnal on iPhone. If anything here is unclear, write to me at [contact@semnal.me](mailto:contact@semnal.me).
 
 ## The short version
 
@@ -120,6 +120,7 @@ Plain notifications with your display name also go out when you confirm you're s
 
 - **What's on the server,** as described above.
 - **Emails you send me.** When you tap a feedback link in Settings, Semnal opens an email to me. It adds the app's version and build at the bottom. You can read or delete that line before you send. I use your email only to reply, and I keep it only as long as I need to.
+- **Emails asking for the beta.** The Ask for the beta button on semnal.me only opens an email in your own mail app. If you send it, it reaches only my mailbox at contact@semnal.me; no form or mailing-list service sees it. I use it only to send you the beta link, and I delete it if you ask.
 - **Apple's reports,** if you share them, as described above.
 
 I don't share any of this with anyone else, and I don't sell it.
@@ -136,10 +137,10 @@ I don't share any of this with anyone else, and I don't sell it.
 - **Recordings** on the server can be deleted sooner in **Settings → Cloud storage**.
 - **Deleting the app** removes the signals, settings, history and recordings it stored on that iPhone. It doesn't remove videos in your Photos, the copy of your signals and settings in iCloud, or your record on my server. Use **Remove All Data** first if you want those gone too. Otherwise recordings on the server still go after 7 days, and the rest a year after your account was last in use.
 - **The iCloud copy:** on iPhone, open **Settings**, tap your name, then **iCloud**, open the storage list, choose the app and delete its data.
-- **Your record on my server, if you can't use the app:** email me at [semnal@aigarden.uk](mailto:semnal@aigarden.uk) and I'll delete your account, display name, push tokens, links, storage count and key record by hand. Your account is anonymous, so I can't find it from your email address. Send me your account key from **Settings → Push Notification → Account key**, and I'll use it to find your record. The key stops working once the account is deleted. If you have no key, send me your display name and the name of one person you alert.
+- **Your record on my server, if you can't use the app:** email me at [contact@semnal.me](mailto:contact@semnal.me) and I'll delete your account, display name, push tokens, links, storage count and key record by hand. Your account is anonymous, so I can't find it from your email address. Send me your account key from **Settings → Push Notification → Account key**, and I'll use it to find your record. The key stops working once the account is deleted. If you have no key, send me your display name and the name of one person you alert.
 - **Emails:** ask me and I'll delete our conversation.
 
-Wherever you live, you can ask me what I hold about you, or ask me to correct or delete it, at semnal@aigarden.uk.
+Wherever you live, you can ask me what I hold about you, or ask me to correct or delete it, at contact@semnal.me.
 
 ## Children
 
@@ -152,4 +153,4 @@ If Semnal starts handling your data differently, I'll update this page and the d
 ## Contact
 
 AI Garden<br>
-Email: [semnal@aigarden.uk](mailto:semnal@aigarden.uk)
+Email: [contact@semnal.me](mailto:contact@semnal.me)
